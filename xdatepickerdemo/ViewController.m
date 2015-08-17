@@ -27,6 +27,12 @@
     [dateBtn addTarget:self action:@selector(dateBtnDidTaped) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:dateBtn];
     
+    
+    dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, dateBtn.frame.origin.y + dateBtn.frame.size.height + self.view.frame.size.width/8, self.view.frame.size.width, self.view.frame.size.width/6)];
+    [dateLabel setNumberOfLines:0];
+    [dateLabel setTextColor:[UIColor darkGrayColor]];
+    [dateLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:dateLabel];
 }
 
 - (void)dateBtnDidTaped{
@@ -47,5 +53,6 @@
 #pragma mark XDatePicker delegate method
 - (void)selectedStartDate:(NSDate *)startDate endDate:(NSDate *)endDate{
     NSLog(@"startDate=%@, endDate=%@", startDate, endDate);
+    [dateLabel setText:[NSString stringWithFormat:@"startDate=%@\nendDate=%@", startDate, endDate]];
 }
 @end

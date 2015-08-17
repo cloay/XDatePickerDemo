@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "XDatePicker.h"
 
-@interface ViewController : UIViewController<XDatePickerDelegate>
+@interface ViewController : UIViewController<XDatePickerDelegate>{
+    UILabel *dateLabel;
+}
 
 
 @end
